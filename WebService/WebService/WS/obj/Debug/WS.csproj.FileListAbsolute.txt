@@ -1,0 +1,6 @@
+F:\Programowanie\C#\WebService\WebService\WS\bin\WS.dll.config
+F:\Programowanie\C#\WebService\WebService\WS\bin\WS.dll
+F:\Programowanie\C#\WebService\WebService\WS\bin\WS.pdb
+F:\Programowanie\C#\WebService\WebService\WS\obj\Debug\WS.csprojResolveAssemblyReference.cache
+F:\Programowanie\C#\WebService\WebService\WS\obj\Debug\WS.dll
+F:\Programowanie\C#\WebService\WebService\WS\obj\Debug\WS.pdb
