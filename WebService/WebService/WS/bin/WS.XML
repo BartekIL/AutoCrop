@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WS</name>
+    </assembly>
+    <members>
+        <member name="T:WS.WebService1">
+            <summary>
+            Summary description for WebService1
+            </summary>
+        </member>
+        <member name="M:WS.WebService1.UploadFile(System.Byte[],System.String)">
+            <summary>
+            Metoda przyjmująca tablicę typu byte oraz nazwę pliku. Celem metody jest przycięcie wywołanie funkcji CropImage oraz zwrócenie do aplikacji internetowej przyciętego obrazka.
+            </summary>
+            <param name="f"></param>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WS.WebService1.CropImage(System.Drawing.Image)">
+            <summary>
+            Celem metody jest przykadrowanie otrzymanego obrazka, tak aby widok zawierał jedynie kartkę papieru, oraz zwrócenie go do metody UploadFile
+            </summary>
+            <param name="img"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

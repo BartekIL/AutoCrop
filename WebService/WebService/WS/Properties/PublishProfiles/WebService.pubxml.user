@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>F:\LocalhostWS</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/AForge.Controls.dll">
+      <publishTime>07/15/2013 23:04:46</publishTime>
+    </File>
+    <File Include="bin/AForge.dll">
+      <publishTime>07/15/2013 23:04:38</publishTime>
+    </File>
+    <File Include="bin/AForge.Fuzzy.dll">
+      <publishTime>07/15/2013 23:04:38</publishTime>
+    </File>
+    <File Include="bin/AForge.Genetic.dll">
+      <publishTime>07/15/2013 23:04:40</publishTime>
+    </File>
+    <File Include="bin/AForge.Imaging.dll">
+      <publishTime>07/15/2013 23:04:42</publishTime>
+    </File>
+    <File Include="bin/AForge.Imaging.Formats.dll">
+      <publishTime>07/15/2013 23:04:38</publishTime>
+    </File>
+    <File Include="bin/AForge.Imaging.IPPrototyper.dll">
+      <publishTime>07/15/2013 23:08:10</publishTime>
+    </File>
+    <File Include="bin/AForge.Math.dll">
+      <publishTime>07/15/2013 23:04:40</publishTime>
+    </File>
+    <File Include="bin/AForge.Neuro.dll">
+      <publishTime>07/15/2013 23:04:44</publishTime>
+    </File>
+    <File Include="bin/AForge.Video.dll">
+      <publishTime>07/15/2013 23:04:40</publishTime>
+    </File>
+    <File Include="bin/WS.dll">
+      <publishTime>06/24/2015 20:36:01</publishTime>
+    </File>
+    <File Include="Service.asmx">
+      <publishTime>06/23/2015 19:45:54</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>06/24/2015 19:42:19</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

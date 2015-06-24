@@ -16,163 +16,82 @@ namespace WebService.Service {
     public interface WebService1Soap {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         int HelloWorld(int a, int b);
         
-        // CODEGEN: Parameter 'imageToByteArrayResult' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/imageToByteArray", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MarshalByRefObject))]
-        WebService.Service.imageToByteArrayResponse imageToByteArray(WebService.Service.imageToByteArrayRequest request);
-        
-        // CODEGEN: Parameter 'byteArrayIn' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/byteArrayToImage", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MarshalByRefObject))]
-        WebService.Service.byteArrayToImageResponse byteArrayToImage(WebService.Service.byteArrayToImageRequest request);
+        // CODEGEN: Generating message contract since element name f from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UploadFile", ReplyAction="*")]
+        WebService.Service.UploadFileResponse UploadFile(WebService.Service.UploadFileRequest request);
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public abstract partial class Image : MarshalByRefObject {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UploadFileRequest {
         
-        private object tagField;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UploadFile", Namespace="http://tempuri.org/", Order=0)]
+        public WebService.Service.UploadFileRequestBody Body;
         
-        private ColorPalette paletteField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public object Tag {
-            get {
-                return this.tagField;
-            }
-            set {
-                this.tagField = value;
-                this.RaisePropertyChanged("Tag");
-            }
+        public UploadFileRequest() {
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public ColorPalette Palette {
-            get {
-                return this.paletteField;
-            }
-            set {
-                this.paletteField = value;
-                this.RaisePropertyChanged("Palette");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class ColorPalette : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Image))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public abstract partial class MarshalByRefObject : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
+        public UploadFileRequest(WebService.Service.UploadFileRequestBody Body) {
+            this.Body = Body;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="imageToByteArray", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class imageToByteArrayRequest {
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class UploadFileRequestBody {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public WebService.Service.Image imageIn;
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public byte[] f;
         
-        public imageToByteArrayRequest() {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string fileName;
+        
+        public UploadFileRequestBody() {
         }
         
-        public imageToByteArrayRequest(WebService.Service.Image imageIn) {
-            this.imageIn = imageIn;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="imageToByteArrayResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class imageToByteArrayResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
-        public byte[] imageToByteArrayResult;
-        
-        public imageToByteArrayResponse() {
-        }
-        
-        public imageToByteArrayResponse(byte[] imageToByteArrayResult) {
-            this.imageToByteArrayResult = imageToByteArrayResult;
+        public UploadFileRequestBody(byte[] f, string fileName) {
+            this.f = f;
+            this.fileName = fileName;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="byteArrayToImage", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class byteArrayToImageRequest {
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UploadFileResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
-        public byte[] byteArrayIn;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UploadFileResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WebService.Service.UploadFileResponseBody Body;
         
-        public byteArrayToImageRequest() {
+        public UploadFileResponse() {
         }
         
-        public byteArrayToImageRequest(byte[] byteArrayIn) {
-            this.byteArrayIn = byteArrayIn;
+        public UploadFileResponse(WebService.Service.UploadFileResponseBody Body) {
+            this.Body = Body;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="byteArrayToImageResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class byteArrayToImageResponse {
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class UploadFileResponseBody {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public WebService.Service.Image byteArrayToImageResult;
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public byte[] UploadFileResult;
         
-        public byteArrayToImageResponse() {
+        public UploadFileResponseBody() {
         }
         
-        public byteArrayToImageResponse(WebService.Service.Image byteArrayToImageResult) {
-            this.byteArrayToImageResult = byteArrayToImageResult;
+        public UploadFileResponseBody(byte[] UploadFileResult) {
+            this.UploadFileResult = UploadFileResult;
         }
     }
     
@@ -208,27 +127,17 @@ namespace WebService.Service {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WebService.Service.imageToByteArrayResponse WebService.Service.WebService1Soap.imageToByteArray(WebService.Service.imageToByteArrayRequest request) {
-            return base.Channel.imageToByteArray(request);
+        WebService.Service.UploadFileResponse WebService.Service.WebService1Soap.UploadFile(WebService.Service.UploadFileRequest request) {
+            return base.Channel.UploadFile(request);
         }
         
-        public byte[] imageToByteArray(WebService.Service.Image imageIn) {
-            WebService.Service.imageToByteArrayRequest inValue = new WebService.Service.imageToByteArrayRequest();
-            inValue.imageIn = imageIn;
-            WebService.Service.imageToByteArrayResponse retVal = ((WebService.Service.WebService1Soap)(this)).imageToByteArray(inValue);
-            return retVal.imageToByteArrayResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WebService.Service.byteArrayToImageResponse WebService.Service.WebService1Soap.byteArrayToImage(WebService.Service.byteArrayToImageRequest request) {
-            return base.Channel.byteArrayToImage(request);
-        }
-        
-        public WebService.Service.Image byteArrayToImage(byte[] byteArrayIn) {
-            WebService.Service.byteArrayToImageRequest inValue = new WebService.Service.byteArrayToImageRequest();
-            inValue.byteArrayIn = byteArrayIn;
-            WebService.Service.byteArrayToImageResponse retVal = ((WebService.Service.WebService1Soap)(this)).byteArrayToImage(inValue);
-            return retVal.byteArrayToImageResult;
+        public byte[] UploadFile(byte[] f, string fileName) {
+            WebService.Service.UploadFileRequest inValue = new WebService.Service.UploadFileRequest();
+            inValue.Body = new WebService.Service.UploadFileRequestBody();
+            inValue.Body.f = f;
+            inValue.Body.fileName = fileName;
+            WebService.Service.UploadFileResponse retVal = ((WebService.Service.WebService1Soap)(this)).UploadFile(inValue);
+            return retVal.Body.UploadFileResult;
         }
     }
 }

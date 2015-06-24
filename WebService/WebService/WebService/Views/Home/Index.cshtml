@@ -1,8 +1,7 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
-<script src="/Scripts/jquery-1.8.2.js"></script>
-<script src="/Scripts/ajaxfileupload.js"></script>
+
 <div class="row">
     <div class="col-md-4">
         <a href="#">
@@ -38,6 +37,7 @@
 
 <script type="text/javascript">
     var image = '';
+
     $(document).ready(function () {
         $('.row a').click(function () {
             image = $('img', $(this)).attr('src');
@@ -46,16 +46,23 @@
         });
     });
     function SendImage() {
-        $.ajax({
-            method: 'POST',
-            url: '/home/index',
-            data: { "Image": image, },
-            success: function (data, status) {
-                alert(data);
-            },
-            error: function (data, status, e) {
-                alert("error");
-            },
-        });
+
+        var data = '{"imagepath": "' + image + '"}';
+
+        $.ajax
+            (
+                {
+                    method: "POST",
+                    url: '/home/sendimage',
+                    secureuri: false,
+                    data: jQuery.parseJSON(data),
+                    success: function (data, status) {
+                        $(".row").append('<div class="col-md-4"><a href="#"><img alt="" src="' + data + '" /></a></div>')
+                    },
+                    error: function (data, status, e) {
+                        alert("error");
+                    }
+                }
+            );
     }
 </script>

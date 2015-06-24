@@ -30,3 +30,4 @@ F:\Programowanie\C#\WebService\WebService\WebService\bin\pl\System.Net.Http.WebR
 F:\Programowanie\C#\WebService\WebService\WebService\obj\Debug\WebService.csprojResolveAssemblyReference.cache
 F:\Programowanie\C#\WebService\WebService\WebService\obj\Debug\WebService.dll
 F:\Programowanie\C#\WebService\WebService\WebService\obj\Debug\WebService.pdb
+F:\Programowanie\C#\WebService\WebService\WebService\bin\WebService.XML

@@ -17,43 +17,18 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="imageToByteArray">
+      <s:element name="UploadFile">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="imageIn" type="tns:Image" />
+            <s:element minOccurs="0" maxOccurs="1" name="f" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="Image" abstract="true">
-        <s:complexContent mixed="false">
-          <s:extension base="tns:MarshalByRefObject">
-            <s:sequence>
-              <s:element minOccurs="0" maxOccurs="1" name="Tag" />
-              <s:element minOccurs="0" maxOccurs="1" name="Palette" type="tns:ColorPalette" />
-            </s:sequence>
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="MarshalByRefObject" abstract="true" />
-      <s:complexType name="ColorPalette" />
-      <s:element name="imageToByteArrayResponse">
+      <s:element name="UploadFileResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="imageToByteArrayResult" type="s:base64Binary" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="byteArrayToImage">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="byteArrayIn" type="s:base64Binary" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="byteArrayToImageResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="byteArrayToImageResult" type="tns:Image" />
+            <s:element minOccurs="0" maxOccurs="1" name="UploadFileResult" type="s:base64Binary" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -65,30 +40,20 @@
   <wsdl:message name="HelloWorldSoapOut">
     <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
   </wsdl:message>
-  <wsdl:message name="imageToByteArraySoapIn">
-    <wsdl:part name="parameters" element="tns:imageToByteArray" />
+  <wsdl:message name="UploadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadFile" />
   </wsdl:message>
-  <wsdl:message name="imageToByteArraySoapOut">
-    <wsdl:part name="parameters" element="tns:imageToByteArrayResponse" />
-  </wsdl:message>
-  <wsdl:message name="byteArrayToImageSoapIn">
-    <wsdl:part name="parameters" element="tns:byteArrayToImage" />
-  </wsdl:message>
-  <wsdl:message name="byteArrayToImageSoapOut">
-    <wsdl:part name="parameters" element="tns:byteArrayToImageResponse" />
+  <wsdl:message name="UploadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadFileResponse" />
   </wsdl:message>
   <wsdl:portType name="WebService1Soap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
       <wsdl:output message="tns:HelloWorldSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="imageToByteArray">
-      <wsdl:input message="tns:imageToByteArraySoapIn" />
-      <wsdl:output message="tns:imageToByteArraySoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="byteArrayToImage">
-      <wsdl:input message="tns:byteArrayToImageSoapIn" />
-      <wsdl:output message="tns:byteArrayToImageSoapOut" />
+    <wsdl:operation name="UploadFile">
+      <wsdl:input message="tns:UploadFileSoapIn" />
+      <wsdl:output message="tns:UploadFileSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
@@ -102,17 +67,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="imageToByteArray">
-      <soap:operation soapAction="http://tempuri.org/imageToByteArray" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="byteArrayToImage">
-      <soap:operation soapAction="http://tempuri.org/byteArrayToImage" style="document" />
+    <wsdl:operation name="UploadFile">
+      <soap:operation soapAction="http://tempuri.org/UploadFile" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -132,17 +88,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="imageToByteArray">
-      <soap12:operation soapAction="http://tempuri.org/imageToByteArray" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="byteArrayToImage">
-      <soap12:operation soapAction="http://tempuri.org/byteArrayToImage" style="document" />
+    <wsdl:operation name="UploadFile">
+      <soap12:operation soapAction="http://tempuri.org/UploadFile" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

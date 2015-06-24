@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebService</name>
+    </assembly>
+    <members>
+        <member name="T:WebService.Controllers.HomeController">
+            <summary>
+            Główny kontroler 
+            </summary>
+        </member>
+        <member name="M:WebService.Controllers.HomeController.RandomString(System.Int32)">
+            <summary>
+            Funkcja losująca stringa o podanej długości.
+            </summary>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebService.Controllers.HomeController.Index">
+            <summary>
+            Akcja zwracająca widok strony głównej
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebService.Controllers.HomeController.SendImage(System.Web.Mvc.FormCollection)">
+            <summary>
+            Wywoływana przez ajax metoda, pobierająca nazwę ścieżki naszego obrazka, która wywołuje funkcję UploadFile, a na końcu zwraca ściężkę do przyciętego pliku.
+            </summary>
+            <param name="form"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebService.Controllers.HomeController.UploadFile(System.String)">
+            <summary>
+            Funkcja przyjmująca ścieżkę do pliku. Otwierająca obrazek oraz przesyłająca go do WebSerive'u, a następnie odbierająca zwrócony, przycięty obrazek. 
+            Funkcja zwraca obrazek
+            </summary>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
